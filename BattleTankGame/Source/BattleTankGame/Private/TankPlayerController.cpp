@@ -42,7 +42,7 @@ void ATankPlayerController::AimToCWS()
 	FVector HitLocation;
 	if (GetCWSHitLocation(HitLocation))
 	{
-		UE_LOG(LogTemp, Warning, TEXT("%s"), *HitLocation.ToString());
+		GetControlledTank()->AimAt(HitLocation);
 	}
 }
 

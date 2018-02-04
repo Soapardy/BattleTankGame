@@ -14,11 +14,11 @@ class BATTLETANKGAME_API ATankPlayerController : public APlayerController
 {
 	GENERATED_BODY()
 
-public:
+private:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
 		
-private:
+
 	UPROPERTY(EditAnywhere)
 		float LineTraceRange = 1000000;
 
