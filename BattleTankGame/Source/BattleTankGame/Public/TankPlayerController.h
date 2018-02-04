@@ -19,6 +19,8 @@ public:
 	virtual void Tick(float DeltaTime) override;
 		
 private:
+	UPROPERTY(EditAnywhere)
+		float LineTraceRange = 1000000;
 
 	UPROPERTY(EditAnywhere)
 		float CrossHairXLocation = 0.5f;
@@ -32,6 +34,12 @@ private:
 	// CWS = CrossHairWorldSpace
 	void AimToCWS();
 
+	// Gibt die Hitlocation und ob etwas getroffenw erden kann wieder
 	bool GetCWSHitLocation(FVector& OUT HitLocation) const;
 
+	// Uebertraegt die Location und Direction des Crosshairs
+	bool GetLookDirection(FVector2D ScreenLocation, FVector& OUT LookDirection) const;
+
+	// LineTrace Out in LookDirection
+	bool GetLookHitLocation(FVector LookDirection, FVector& HitLocation) const;
 };
