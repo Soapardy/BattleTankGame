@@ -35,11 +35,20 @@ void UTankAimingComponent::TickComponent(float DeltaTime, ELevelTick TickType, F
 	// ...
 }
 
-void UTankAimingComponent::AimAt(FVector HitLocation)
+void UTankAimingComponent::AimAt(FVector HitLocation, float LunchSpeed)
 {
-	/*FString BarrelLocation = Barrel->GetComponentLocation().ToString();
+	if (!Barrel){return;}
 	
-	 // Zurzeit Fehlerhaft */
+		FVector OUT LunchVelocity;
+		FVector StartLocation = Barrel->GetSocketLocation(FName("LunchSocket"));
+	
+		if (UGameplayStatics::SuggestProjectileVelocity // Errechnet LunchVelocity und gibt ein Bool zurueck
+		(
+			this, LunchVelocity, StartLocation, HitLocation, LunchSpeed, false, 20.f)
+		)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Velocity : "),*LunchVelocity.SafeNormal().ToString())
+		}
 }
 
 void UTankAimingComponent::SetBarrelReference(UStaticMeshComponent * BarrelToSet)

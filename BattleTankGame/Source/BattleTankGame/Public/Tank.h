@@ -15,6 +15,7 @@ public:
 	//
 	void AimAt(FVector HitLocation);
 
+	// Setzt die Referenz fuer Das Barrel / Rohr des Tanks
 	UFUNCTION(BlueprintCallable)
 	void SetBarrelReference(UStaticMeshComponent* BarrelToSet);
 
@@ -34,6 +35,10 @@ private:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	// StartGeschwindigkeit des Projektiles (Default 1000m/s)
+	UPROPERTY(EditAnywhere, Category = Firing)
+		float LunchSpeed = 100000;
 
 	
 	
