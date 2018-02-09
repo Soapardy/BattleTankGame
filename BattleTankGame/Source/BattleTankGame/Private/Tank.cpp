@@ -7,6 +7,8 @@
 void ATank::SetBarrelReference(UStaticMeshComponent * BarrelToSet)
 {
 	AimingComponent->SetBarrelReference(BarrelToSet);
+	UE_LOG(LogTemp, Warning, TEXT("Tank : %s"), *BarrelToSet->GetName())
+	
 }
 
 // Sets default values
