@@ -15,10 +15,6 @@ void ATankAIController::BeginPlay()
 	{
 		UE_LOG(LogTemp, Error, TEXT("AIController cant find a PlayerTank!"));
 	}
-	else
-	{
-		UE_LOG(LogTemp, Warning, TEXT("AIController find %s !"), *(GetPlayerTank()->GetName()));
-	}
 }
 
 ATank* ATankAIController::GetControlledTank() const

@@ -25,10 +25,6 @@ void ATankPlayerController::BeginPlay()
 	{
 		UE_LOG(LogTemp, Error, TEXT("PlayerController is not possessing a Tank!"));
 	}
-	else
-	{
-		UE_LOG(LogTemp, Warning, TEXT("PlayerController possessing %s !"), *(GetControlledTank()->GetName()));
-	}
 	AimToCWS();
 }
 

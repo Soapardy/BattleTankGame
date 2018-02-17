@@ -18,7 +18,7 @@ public:
 private:
 	// Geschwindigkeit des Rohres
 	UPROPERTY(EditAnywhere, category = Attribute)
-		float MaxDegreesPerSecond = 20.f;
+		float MaxDegreesPerSecond = 5.f;
 	// Max hoehe in degrees, die sich das Rohr heben kann
 	UPROPERTY(EditAnywhere, category = Attribute)
 		float MaxElevationDegrees = 40.f;
