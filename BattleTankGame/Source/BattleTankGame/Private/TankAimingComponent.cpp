@@ -5,6 +5,7 @@
 #include "TankAimingComponent.h"
 
 
+
 // Sets default values for this component's properties
 UTankAimingComponent::UTankAimingComponent()
 {
@@ -23,7 +24,7 @@ void UTankAimingComponent::AimAt(FVector HitLocation, float LunchSpeed)
 	
 		FVector OUT LunchVelocity;
 		FVector StartLocation = Barrel->GetSocketLocation(FName("LunchSocket"));
-		bool bHaveAimSolution = (UGameplayStatics::SuggestProjectileVelocity(this, LunchVelocity, StartLocation, HitLocation, LunchSpeed, ESuggestProjVelocityTraceOption::DoNotTrace));
+		bool bHaveAimSolution = (UGameplayStatics::SuggestProjectileVelocity(this, LunchVelocity, StartLocation, HitLocation, LunchSpeed, false, 0.f, 0.f, ESuggestProjVelocityTraceOption::DoNotTrace));
 		
 		if (bHaveAimSolution)
 		{
