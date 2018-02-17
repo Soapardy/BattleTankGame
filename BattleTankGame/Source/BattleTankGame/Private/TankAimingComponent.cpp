@@ -19,7 +19,7 @@ void UTankAimingComponent::SetBarrelReference(UTankBarrel * BarrelToSet)
 
 void UTankAimingComponent::AimAt(FVector HitLocation, float LunchSpeed)
 {
-	if (!Barrel) { UE_LOG(LogTemp, Warning, TEXT("Kein Barrel")); return; }
+	if (!Barrel) { UE_LOG(LogTemp, Error, TEXT("Kein Barrel")); return; }
 	
 		FVector OUT LunchVelocity;
 		FVector StartLocation = Barrel->GetSocketLocation(FName("LunchSocket"));
