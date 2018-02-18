@@ -18,7 +18,7 @@ public:
 
 private:
 	// Geschwindigkeit des Turrets
-	UPROPERTY(EditAnywhere, category = Attribute)
+	UPROPERTY(EditDefaultsOnly, category = Attribute)
 	float MaxDegreesPerSecond = 15.f;
 
 	

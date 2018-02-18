@@ -57,10 +57,10 @@ void ATank::Fire()
 	if (Barrel && bIsReloaded)
 	{
 		auto Projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileBlueprint, Barrel->GetSocketLocation(FName("LunchSocket")), Barrel->GetSocketRotation(FName("LunchSocket")));
-
+		
 		Projectile->LunchProjectile(LunchSpeed);
 
-		// Nachladen Starten
+		// Start reload
 		LastFireTime = FPlatformTime::Seconds();
 	}
 }
