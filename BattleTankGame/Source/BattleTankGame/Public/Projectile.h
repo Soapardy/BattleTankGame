@@ -11,16 +11,18 @@ class BATTLETANKGAME_API AProjectile : public AActor
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
 	AProjectile();
+	void LunchProjectile(float LunchSpeed);
 
 protected:
-	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+private:
+	// MovementComponent 
+	UProjectileMovementComponent *MovementComponent = nullptr;
+
+
+
 
 	
 	
