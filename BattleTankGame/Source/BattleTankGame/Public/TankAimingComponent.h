@@ -6,6 +6,7 @@
 #include "TankAimingComponent.generated.h"
 
 class UTankBarrel;
+class UTankTurret;
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class BATTLETANKGAME_API UTankAimingComponent : public UActorComponent
@@ -17,6 +18,7 @@ public:
 	UTankAimingComponent();
 
 	void SetBarrelReference(UTankBarrel* BarrelToSet);
+	void SetTurretReference(UTankTurret* TurretToSet);
 
 protected:
 
@@ -25,8 +27,12 @@ public:
 	void AimAt(FVector HitLocation, float LunchSpeed);
 
 private:
-	// Das Barrel (Rohr) des Tanks
+	// Die Referenzen der StaticMeshes des Tanks 
+	// Werden im BP Begin Play gesetzt
+
 	UTankBarrel *Barrel = nullptr;
+	UTankTurret *Turret = nullptr;
 
 	void MoveBarrel(FVector AimDirection);
+	void TurnTurret(FVector AimDirection);
 };

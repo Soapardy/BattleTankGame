@@ -12,6 +12,11 @@ void ATank::SetBarrelReference(UTankBarrel * BarrelToSet)
 	
 }
 
+void ATank::SetTurretReference(UTankTurret* TurretToSet)
+{
+	AimingComponent->SetTurretReference(TurretToSet);
+}
+
 // Sets default values
 ATank::ATank()
 {
@@ -38,4 +43,9 @@ void ATank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 void ATank::AimAt(FVector HitLocation)
 {
 	AimingComponent->AimAt(HitLocation, LunchSpeed);
+}
+
+void ATank::Fire()
+{
+	UE_LOG(LogTemp, Warning, TEXT("OnFire"))
 }

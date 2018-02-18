@@ -8,6 +8,7 @@
 
 // Forward declarations
 class UTankBarrel;
+class UTankTurret;
 class UTankAimingComponent;
 
 UCLASS()
@@ -16,12 +17,18 @@ class BATTLETANKGAME_API ATank : public APawn
 	GENERATED_BODY()
 
 public:
-	//
+	
 	void AimAt(FVector HitLocation);
+
+	UFUNCTION(BlueprintCallable)
+	void Fire();
 
 	// Setzt die Referenz fuer Das Barrel / Rohr des Tanks
 	UFUNCTION(BlueprintCallable)
 	void SetBarrelReference(UTankBarrel* BarrelToSet);
+
+	UFUNCTION(BlueprintCallable)
+	void SetTurretReference(UTankTurret* TurretToSet);
 
 protected:
 
@@ -39,7 +46,7 @@ private:
 
 	// StartGeschwindigkeit des Projektiles (Default 1000m/s)
 	UPROPERTY(EditAnywhere, Category = Firing)
-		float LunchSpeed = 100000;
+		float LunchSpeed = 5000;
 
 	
 	
